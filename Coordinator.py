@@ -242,9 +242,7 @@ def readConfig(fName : str):
     h2 = arg.h2
     h3 = arg.h3
     band = arg.band
-    IP_SERVER = arg.IP_SERVER
-    PORT_NODE = arg.PORT_NODE
-    PORT_USER = arg.PORT_USER
+    IP_SERVER = socket.gethostname()
     MAX_NUMBER_NODE = arg.MAX_NUMBER_NODE
     DELTA_BAND = int(band / 10)
     DELTA_EPS = arg.DELTA_EPS
