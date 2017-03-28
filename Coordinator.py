@@ -42,7 +42,7 @@ lstName = []
 #to check whether an user connnects to
 bUserConnect = False
 
-IP_SERVER  = 'localhost'
+IP_SERVER  = None
 PORT_NODE = 9407
 PORT_USER = 7021
 MAX_NUMBER_NODE = 50
@@ -242,7 +242,6 @@ def readConfig(fName : str):
     h2 = arg.h2
     h3 = arg.h3
     band = arg.band
-    IP_SERVER = socket.gethostname()
     MAX_NUMBER_NODE = arg.MAX_NUMBER_NODE
     DELTA_BAND = int(band / 10)
     DELTA_EPS = arg.DELTA_EPS
@@ -250,6 +249,9 @@ def readConfig(fName : str):
     FILE_MON_TOP = 'data/Top_' + ext + '.dat'
     NUM_MONITOR = arg.NUM_MONITOR
     TIME_CAL_NETWORK = arg.TIME_CAL_NETWORK
+    IP_SERVER = arg.IP_SERVER
+    if (IP_SERVER == None):
+        IP_SERVER = socket.gethostname()
 
 def init():
     global serverForNode, serverForUser
